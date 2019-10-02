@@ -10,8 +10,7 @@ tar xzvf jdk-8u131-linux-x64.tar.gz
 export JAVA_HOME=~/jdk1.8.0_131
 export PATH=$JAVA_HOME/bin:$PATH
 
-# Install Arrow R
-conda install -c conda-forge r-arrow
+# Install Arrow R. Installs it here to make sure r-arrow is installed from conda (see environment.yml).
 R -e "install.packages('arrow', repos='https://cloud.r-project.org/')"
 
 # Insall the latest Spark

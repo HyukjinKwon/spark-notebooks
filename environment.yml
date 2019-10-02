@@ -3,3 +3,4 @@ dependencies:
   - pandas
   - rpy2
   - pip
+  - r-arrow
