@@ -2,13 +2,8 @@
 # Install Java and set its home.
 wget -c --header "Cookie: oraclelicense=accept-securebackup-cookie" http://download.oracle.com/otn-pub/java/jdk/8u131-b11/d54c1d3a095b4ff2b6607d096fa80163/jdk-8u131-linux-x64.tar.gz
 tar xzvf jdk-8u131-linux-x64.tar.gz
-cd jdk1.8.0_131
-export JAVA_HOME=`pwd`
-echo "export JAVA_HOME="`pwd` >> ~/.profile
-cd bin
-export PATH=`pwd`:$PATH
-echo "export PATH="`pwd`":$PATH" >> ~/.profile
-cd ../..
+export JAVA_HOME=~/jdk1.8.0_131
+export PATH=$JAVA_HOME/bin:$PATH
 
 # Install Arrow R
 conda install -c conda-forge r-arrow
@@ -17,10 +12,3 @@ conda install -c conda-forge r-arrow
 git clone https://github.com/apache/spark.git
 cd spark
 ./build/mvn -DskipTests -Psparkr -Phive package
-
-# Set PYTHONPATH and SPARK_HOME.
-export SPARK_HOME=`pwd`
-echo "export SPARK_HOME="`pwd` >> ~/.profile
-export PYTHONPATH=$(ZIPS=("$SPARK_HOME"/python/lib/*.zip); IFS=:; echo "${ZIPS[*]}"):$PYTHONPATH
-echo 'export PYTHONPATH=$(ZIPS=("$SPARK_HOME"/python/lib/*.zip); IFS=:; echo "${ZIPS[*]}"):$PYTHONPATH' >> ~/.profile
-
