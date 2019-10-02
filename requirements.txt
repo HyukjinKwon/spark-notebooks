@@ -1,3 +1,0 @@
-pyarrow
-pandas
-rpy2

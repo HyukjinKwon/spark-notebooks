@@ -1,0 +1,5 @@
+dependencies:
+  - pyarrow
+  - pandas
+  - rpy2
+  - pip
