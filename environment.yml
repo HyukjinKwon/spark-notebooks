@@ -1,0 +1,10 @@
+channels:
+  - bioconda
+  - conda-forge
+dependencies:
+  - pyarrow
+  - pandas
+  - rpy2
+  - pip
+  - r-arrow
+  - java-jdk=8
