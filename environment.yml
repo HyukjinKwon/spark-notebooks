@@ -1,4 +1,5 @@
 channels:
+  - bioconda
   - conda-forge
 dependencies:
   - pyarrow
@@ -6,3 +7,4 @@ dependencies:
   - rpy2
   - pip
   - r-arrow
+  - java-jdk<=8

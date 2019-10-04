@@ -4,12 +4,6 @@ set -o pipefail
 set -e
 set -x
 
-# Install Java and set its home.
-wget -c --header "Cookie: oraclelicense=accept-securebackup-cookie" http://download.oracle.com/otn-pub/java/jdk/8u131-b11/d54c1d3a095b4ff2b6607d096fa80163/jdk-8u131-linux-x64.tar.gz
-tar xzvf jdk-8u131-linux-x64.tar.gz
-export JAVA_HOME=~/jdk1.8.0_131
-export PATH=$JAVA_HOME/bin:$PATH
-
 # Install Arrow R. Installs it here to make sure r-arrow is installed from conda (see environment.yml).
 R -e "install.packages('arrow', repos='https://cloud.r-project.org/')"
 
