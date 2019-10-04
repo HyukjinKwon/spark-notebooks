@@ -7,4 +7,4 @@ dependencies:
   - rpy2
   - pip
   - r-arrow
-  - java-jdk<=8
+  - java-jdk=8
