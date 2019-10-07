@@ -6,5 +6,5 @@ dependencies:
   - pandas
   - rpy2
   - pip
-  - r-arrow
+  - r-arrow=0.14.1
   - java-jdk=8
