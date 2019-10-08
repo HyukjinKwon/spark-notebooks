@@ -4,16 +4,14 @@ set -o pipefail
 set -e
 set -x
 
-# Install Arrow R. Installs it here to make sure r-arrow is installed from conda (see environment.yml).
-R -e "install.packages('arrow', repos='https://cloud.r-project.org/')"
+# Install Arrow R. Installs. Make sure r-arrow is installed first (see environment.yml).
+R -e "install.packages('https://cran.r-project.org/src/contrib/Archive/arrow/arrow_0.14.1.tar.gz', repos=NULL, type='source')"
 # Also install other R libraries
 R -e "install.packages(c('knitr', 'rmarkdown', 'e1071', 'survival', 'roxygen2'), repos='https://cloud.r-project.org/')"
 # Install testthat 1.0.2
 R -e "install.packages(c('crayon', 'praise', 'R6'), repos='https://cloud.r-project.org/')"
 R -e "install.packages('https://cloud.r-project.org/src/contrib/Archive/testthat/testthat_1.0.2.tar.gz', repos=NULL, type='source')"
 R -e "install.packages(c('microbenchmark'), repos='https://cloud.r-project.org/')"
-# Install Arrow
-R -e "install.packages('https://cran.r-project.org/src/contrib/Archive/arrow/arrow_0.14.1.tar.gz', repos=NULL, type='source')"
 
 # Insall the latest Spark
 git clone https://github.com/apache/spark.git
